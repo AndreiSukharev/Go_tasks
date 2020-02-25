@@ -4,4 +4,4 @@
 My realisation of UNIX tool tree
 
 - pipeline:
-Implementation of pipeline pattern using go routines to 
+Implementation of pipeline pattern using go routines
