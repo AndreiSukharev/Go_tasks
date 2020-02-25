@@ -1,5 +1,7 @@
 # UNIX_tools
 
-My realisation of UNIX tools tree and pipeline using Golang.
+- tree:
+My realisation of UNIX tool tree
 
-For detailed description check the folder you need
+- pipeline:
+Implementation of pipeline pattern using go routines to 
