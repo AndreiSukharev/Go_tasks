@@ -1,6 +1,7 @@
-package main
+package db
 
 import (
+	"coursera/db"
 	"database/sql"
 	"fmt"
 	"reflect"
@@ -86,7 +87,7 @@ func CleanupTestApis(db *sql.DB) {
 }
 
 func TestApis(t *testing.T) {
-	db, err := sql.Open("mysql", DSN)
+	db, err := sql.Open("mysql", main.DSN)
 	err = db.Ping()
 	if err != nil {
 		panic(err)
@@ -173,6 +174,7 @@ func TestApis(t *testing.T) {
 				},
 			},
 		},
+		//5
 		Case{
 			Path: "/items/1",
 			Result: CR{
@@ -225,6 +227,7 @@ func TestApis(t *testing.T) {
 				},
 			},
 		},
+		// 9
 		Case{
 			Path:   "/items/3",
 			Method: http.MethodPost,
@@ -251,7 +254,7 @@ func TestApis(t *testing.T) {
 			},
 		},
 
-		// обновление null-поля в таблице
+		//обновление null-поля в таблице
 		Case{
 			Path:   "/items/3",
 			Method: http.MethodPost,
@@ -328,6 +331,7 @@ func TestApis(t *testing.T) {
 				"error": "field title have invalid type",
 			},
 		},
+		// 17
 		Case{
 			Path:   "/items/3",
 			Method: http.MethodPost,
@@ -436,6 +440,7 @@ func TestApis(t *testing.T) {
 				"error": "field user_id have invalid type",
 			},
 		},
+		// 26
 		// не забываем про sql-инъекции
 		Case{
 			Path:   "/users/",
